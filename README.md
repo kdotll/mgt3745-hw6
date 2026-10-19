@@ -1,15 +1,20 @@
 # HW6: Two Builders, One Specification
 
-> Replace every line in angle brackets. A README that still carries template placeholders loses points.
-
 ## Feature
 
-**Team repository:** <URL of your team repository>
-**Spec provenance:** copied from commit `<full commit hash>` on <YYYY-MM-DD>
+**Team repository:** https://github.com/Kcornett533/mgt3745-team-beta
+**Spec provenance:** copied from commit `d3c4267fabcf4433c96778256640c3a07a5fd97b` on <2026-10-19>
 
-**Feature:** <ID and name from your team's FEATURES.md>
+**Feature:** Feature F-01: Accounting Compliance Knockout Gate (Must-be)
 
-<Paste the feature's EARS rows here, unchanged. At least three rows, including at least one IF row.>
+- **Ubiquitous:** The system shall evaluate candidate eligibility against explicit, deterministic criteria:
+  1. **Degree Alignment:** Major must be strictly within accredited accounting/finance disciplines (`Accounting`, `Finance`, `Accounting Information Systems`, or `Internal Audit`).
+  2. **Graduation Timeline:** Graduation year must be within the current academic cycle ($\le 1$ year from target intake).
+  3. **Work Authorization:** Must possess valid, unexpired domestic employment eligibility (`Citizen`, `Permanent Resident`, `F-1 OPT`, or verified work visa).
+  4. **Coursework Prerequisite:** Completion of at least one foundational governance or assurance course (Auditing, AIS, or Internal Controls).
+- **Event-driven:** When a candidate submits their qualification profile, the system shall evaluate the credentials against the four criteria and assign an immediate, strictly binary status badge (`Eligible` or `Ineligible` with no indeterminate or conditional states).
+- **State-driven:** While displaying evaluation results, the system shall render `Eligible` in success green (`#1b8036`) and `Ineligible` in error red (`#922020`) per `STYLE.md`.
+- **Unwanted-behavior (IF):** If any of the four deterministic criteria fail to be satisfied, then the system shall flag the profile as `Ineligible` and specify which exact requirement was unmet without throwing unhandled execution exceptions.
 
 ## See It Work
 
