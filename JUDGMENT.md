@@ -9,7 +9,7 @@ Visual contrast, layout clarity, and UI state preservation across the candidate 
 1. Open `docs/img/bolt.gif` and `docs/img/aistudio.gif` side by side.
 2. Inspect the rendered candidate screening forms in both builder outputs (`builds/bolt.zip` and `builds/aistudio.zip`).
 3. For each of the 10 binary questions below, answer `Y` (Yes) if the build/artifact meets the described standard, or `N` (No) if it fails.
-4. Compare answers between Grader 1 (You) and Grader 2 (Independent Peer Reviewer) to compute the agreement rate.
+4. Compare answers between Grader 1 (You) and Grader 2 (Undergraduate Peer Reviewer) to compute the agreement rate.
 
 ## Evidence Given to the Second Grader
 
@@ -18,7 +18,7 @@ Visual contrast, layout clarity, and UI state preservation across the candidate 
 - Design specification: `context/STYLE.md`
 - Target persona and screening workflow: `context/USERS.md`
 
-**Second grader:** An independent peer reviewer (Undergraduate Engineering/Business Peer Reviewer) evaluating raw builds without external summaries.
+**Second grader:** An Undergraduate Engineering/Business Peer Reviewer
 
 ## Results
 
