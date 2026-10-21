@@ -16,7 +16,7 @@ for (const [name, impl] of Object.entries(builds)) {
     };
 
     const result = impl.evaluateCandidate(validCandidate);
-    assert.equal(result.status, "Eligible", `${name} must return 'Eligible' status for fully compliant candidate`);
+    assert.equal(result.status, "Eligible", `${name} must return 'Eligible' for compliant candidate`);
     assert.equal(result.badgeColor, "#15803d", `${name} must render success green #15803d badge`);
   });
 
@@ -33,7 +33,7 @@ for (const [name, impl] of Object.entries(builds)) {
     assert.equal(result.badgeColor, "#922020", `${name} must render error red #922020 badge`);
     assert.ok(
       result.unmet && result.unmet.some(u => u.toLowerCase().includes("degree")),
-      `${name} must specify 'Degree Alignment' as an unmet requirement`
+      `${name} must specify Degree Alignment as an unmet requirement`
     );
   });
 
