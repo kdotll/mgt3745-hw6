@@ -2,14 +2,12 @@
 
 ## Row-by-Row Evidence
 
-Pass, Partial, or Fail, each with one line of evidence (a screenshot, a file and line, or a test result).
-
 | EARS row | bolt.new | Evidence | AI Studio | Evidence |
 |---|---|---|---|---|
-| F-01-Ubiquitous (Four Knockout Criteria) | Pass | `evals/shared.test.js` line 10 passed; `main.js` lines 2-14 | Pass | `evals/shared.test.js` line 10 passed; `ai_studio_code.html` lines 336-347 |
-| F-01-Event-driven (Instant Binary Evaluation) | Pass | Visual proof in `docs/img/bolt.gif`; form submit handles without reload | Pass | Visual proof in `docs/img/aistudio.gif`; instant eval on button click |
-| F-01-State-driven (Status Badges & Tokens) | Pass | Green/red status badge rendered in `main.js` lines 122-124; `style.css` line 92 | Pass | Exact tokens `#15803d` and `#922020` in `ai_studio_code.html` lines 231-239 |
-| F-01-Unwanted-behavior IF (Failure Handling) | Pass | `evals/shared.test.js` line 23 passed; unfulfilled criteria listed without form clearing | Pass | `evals/shared.test.js` line 23 passed; unmet criteria list rendered in `ai_studio_code.html` line 440 |
+| F-01-Ubiquitous (Four Knockout Criteria) | Pass | `evals/shared.test.js` line 10 passed; `evals/impl/bolt.js` | Pass | `evals/shared.test.js` line 10 passed; `evals/impl/aistudio.js` |
+| F-01-Event-driven (Instant Binary Evaluation) | Pass | Visual proof in `docs/img/bolt.gif`; instant eval on button click without reload | Pass | Visual proof in `docs/img/aistudio.gif`; instant eval on button click without reload |
+| F-01-State-driven (Status Badges & Tokens) | Pass | Binary badges rendered in `evals/impl/bolt.js`; visual proof in `docs/img/bolt.gif` | Pass | Exact tokens `#15803d` and `#922020` in `evals/impl/aistudio.js`; visual proof in `docs/img/aistudio.gif` |
+| F-01-Unwanted-behavior IF (Failure Handling) | Pass | `evals/shared.test.js` line 23 passed; unfulfilled criteria listed in `evals/impl/bolt.js` | Pass | `evals/shared.test.js` line 23 passed; unmet criteria list populated in `evals/impl/aistudio.js` |
 
 ## Scope Creep
 
@@ -27,8 +25,6 @@ Agreement rate with the second grader: 10 of 10 items, 100%. Details in [JUDGMEN
 The top finding from the error log is unrequested project scaffolding from bolt.new (`package.json`, Vite build configs, and `.bolt` WebContainer internals). While Bolt generated working code, its reliance on a full development container introduced unneeded packaging overhead for a simple client-side form component. Conversely, Google AI Studio adhered strictly to zero-dependency vanilla web standards, delivering all HTML, CSS, and JS in a single file (`ai_studio_code.html`). Both builders executed the knockout gate deterministically (verified by `evals/shared.test.js`).
 
 ## Spec Gaps
-
-Every place where both builders guessed, or guessed differently.
 
 | Gap | What each builder assumed | EARS change or exclusion that closes it |
 |---|---|---|
@@ -50,16 +46,12 @@ Every place where both builders guessed, or guessed differently.
 
 | Criterion | Weight | bolt.new | AI Studio |
 |---|---|---|---|
-| Spec & EARS Adherence | 5 | 5 | 5 |
-| Zero-Dependency / Vanilla Standards | 4 | 2 | 5 |
-| Token & Style Fidelity | 3 | 4 | 5 |
-| Ease of Export & Integration | 3 | 2 | 4 |
-| **Weighted total** | | **51** | **72** |
+| Spec & EARS Adherence | 5 | | |
+| Zero-Dependency / Vanilla Standards | 4 | | |
+| Token & Style Fidelity | 3 | | |
+| Ease of Export & Integration | 3 | | |
+| **Weighted total** | | | |
 
 ### Decision
 
-Our team should use **Google AI Studio (Gemini 3.8 Flash)** for this feature in Phase 2. AI Studio produced a 72 vs. 51 weighted score advantage, generating clean, single-file HTML/CSS/JS without unnecessary packages or build scripts. It directly aligns with our team's ADR-001 by avoiding dependency overhead. One thing that gets harder with AI Studio is that it does not provide an integrated live-editing WebContainer runtime, so any future code refactoring must be done in our own editor.
-
 ## Handoff to the Team
-
-Pull request or issue proposing a FEATURES.md change: https://github.com/Kcornett533/mgt3745-team-beta/issues/15
