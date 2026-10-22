@@ -18,10 +18,8 @@ If a student puts in the wrong information and gets flagged, will the screen cle
 
 ## Error Log
 
-Most frequent first. Your top row is the first finding in COMPARISON.md.
-
 | Error | Builder | Frequency | EARS row | Evidence |
 |---|---|---|---|---|
-| Unrequested project scaffolding and lockfile manifests | bolt.new | 1 | N/A (Standards) | `package.json`, `package-lock.json`, Vite config in `builds/bolt.zip` |
-| DOM-coupled event handlers requiring export wrappers | both | 1 | Event-driven | `bolt/main.js` line 74; `ai_studio_code.html` line 348 |
-| Dynamic academic cycle discrepancy (2027 vs 2026 intake) | both | 1 | Ubiquitous (Grad Year) | Bolt dynamically computed 2027 (`main.js` line 16); AI Studio defaulted to 2026 |
+| Unrequested project scaffolding and lockfile manifests | bolt.new | 1 | N/A (Standards) | `builds/bolt.zip` contains `package.json`, `package-lock.json`, and Vite config |
+| DOM-coupled event handlers requiring export wrappers | both | 1 | Event-driven | Adapted in `evals/impl/bolt.js` and `evals/impl/aistudio.js` |
+| Dynamic academic cycle discrepancy (2027 vs 2026 intake) | both | 1 | Ubiquitous (Grad Year) | Bolt dynamically computed 2027 (`evals/impl/bolt.js`); AI Studio defaulted to 2026 (`evals/impl/aistudio.js`) |

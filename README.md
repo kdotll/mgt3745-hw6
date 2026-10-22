@@ -3,6 +3,7 @@
 ## Feature
 
 **Team repository:** https://github.com/Kcornett533/mgt3745-team-beta
+
 **Spec provenance:** copied from commit `d3c4267fabcf4433c96778256640c3a07a5fd97b` on <2026-10-19>
 
 **Feature:** Feature F-01: Accounting Compliance Knockout Gate (Must-be)

@@ -46,12 +46,16 @@ The top finding from the error log is unrequested project scaffolding from bolt.
 
 | Criterion | Weight | bolt.new | AI Studio |
 |---|---|---|---|
-| Spec & EARS Adherence | 5 | | |
-| Zero-Dependency / Vanilla Standards | 4 | | |
-| Token & Style Fidelity | 3 | | |
-| Ease of Export & Integration | 3 | | |
-| **Weighted total** | | | |
+| Spec & EARS Adherence | 5 | 5 | 5 |
+| Zero-Dependency / Vanilla Standards | 4 | 2 | 5 |
+| Token & Style Fidelity | 3 | 4 | 5 |
+| Ease of Export & Integration | 3 | 2 | 4 |
+| **Weighted total** | | **51** | **72** |
 
 ### Decision
 
+Our team should use **Google AI Studio (Gemini 3.8 Flash)** for this feature in Phase 2. AI Studio produced a 72 vs. 51 weighted score advantage, generating clean, single-file HTML/CSS/JS without unnecessary packages or build scripts. It directly aligns with our team's ADR-001 by avoiding dependency overhead. One thing that gets harder with AI Studio is that it does not provide an integrated live-editing WebContainer runtime, so any future code refactoring must be done in our own editor.
+
 ## Handoff to the Team
+
+Pull request or issue proposing a FEATURES.md change: https://github.com/Kcornett533/mgt3745-team-beta/issues/15
