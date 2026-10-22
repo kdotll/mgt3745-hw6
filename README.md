@@ -20,13 +20,11 @@
 
 | bolt.new | AI Studio |
 |---|---|
-| ![bolt build](docs/img/bolt.png) | ![AI Studio build](docs/img/aistudio.png) |
-
-<Replace the two images above with your own screenshots, or one side-by-side GIF.>
+| ![bolt build](docs/img/bolt.gif) | ![AI Studio build](docs/img/aistudio.gif) |
 
 ## Status
 
-<One or two sentences: how many EARS rows each builder satisfied, and your recommendation in one line.>
+Both builders satisfied 4 of 4 EARS rows (Ubiquitous, Event-driven, State-driven, and Unwanted-behavior IF); our team recommends Google AI Studio (Gemini 3.8 Flash) for Phase 2 integration due to strict zero-dependency vanilla compliance and single-file portability.
 
 ## How to Run the Evals
 
@@ -34,7 +32,7 @@
 npm test
 ```
 
-<Say what the test checks and what output to expect.>
+The test runner executes `evals/shared.test.js` using Node's built-in `node:test` engine against both `evals/impl/bolt.js` and `evals/impl/aistudio.js`. It checks compliant candidate qualification, non-compliant knockout gating with specific unmet reasons, and output determinism across repeated identical evaluations. Expected output: 6 passing tests, 0 failures.
 
 ## Links
 
@@ -44,13 +42,13 @@ npm test
 - [prompts/PROMPT.md](prompts/PROMPT.md): the exact input both builders received
 - [builds/](builds/): bolt.zip and aistudio.zip
 - [docs/DDR-001.md](docs/DDR-001.md) (bolt.new), [docs/DDR-002.md](docs/DDR-002.md) (AI Studio)
-- Team pull request or issue: <URL>
-- Deployed Worker (only if you completed the proxy step): <URL>
+- Team pull request or issue: https://github.com/Kcornett533/mgt3745-team-beta/issues/15
 
 ## Hours
 
-<Total hours spent, with a one-line breakdown.>
+Total hours spent: 3 hours.
 
 ## AI Use
 
-<Every tool that wrote more than a line or two, each with a link to its DDR.>
+- bolt.new (Standard agent): generated initial multi-file WebContainer prototype ([DDR-001](docs/DDR-001.md)).
+- Google AI Studio (Gemini 3.8 Flash): generated self-contained single-page component ([DDR-002](docs/DDR-002.md)).
